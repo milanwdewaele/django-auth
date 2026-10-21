@@ -14,9 +14,11 @@
         <form method="get" action="{% url 'contact' %}">
             <button type="submit">Stuur een bericht</button>
         </form>
-        <form method="get" action="{% url 'contact_list' %}">
-            <button type="submit">Bekijk berichten</button>
-        </form>
+        {% if is_super_user %}
+            <form method="get" action="{% url 'contact_list' %}">
+                <button type="submit">Bekijk berichten</button>
+            </form>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -117,6 +117,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
+
 # Media files (user-uploaded files)
 MEDIA_URL = 'images/'
 MEDIA_ROOT = BASE_DIR / 'images'
@@ -126,8 +130,4 @@ MEDIA_ROOT = BASE_DIR / 'images'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
