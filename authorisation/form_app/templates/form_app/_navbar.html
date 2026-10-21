@@ -1,0 +1,11 @@
+<nav>
+    {% if user.is_authenticated %}
+        <form method="get" action="{% url 'logout' %}">
+            <button type="submit">Uitloggen</button>
+        </form>
+    {% else %}
+        <form method="get" action="{% url 'login' %}">
+            <button type="submit">Aanmelden</button>
+        </form>
+    {% endif %}
+</nav>
