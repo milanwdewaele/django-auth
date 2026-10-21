@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIVES</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+        <h1>Neem contact op met VIVES</h1>
+        <form method="get" action="{% url 'contact' %}">
+            <button type="submit">Stuur een bericht</button>
+        </form>
+        <form method="get" action="{% url 'contact_list' %}">
+            <button type="submit">Bekijk berichten</button>
+        </form>
+    </div>
+</body>
+</html>
